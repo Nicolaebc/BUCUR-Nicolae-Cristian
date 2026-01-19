@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar – Manager Personal</title>
+
+  <!-- Stiluri globale -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Stiluri specifice calendarului -->
+  <link rel="stylesheet" href="assets/css/calendar.css">
+</head>
+
+<body>
+
+  <div class="calendar-page">
+
+    <!-- HEADER CALENDAR -->
+    <header class="calendar-header">
+      <div class="left">
+        <button id="prevWeek" class="btn-ghost">←</button>
+        <button id="nextWeek" class="btn-ghost">→</button>
+        <button id="todayBtn" class="btn">Astăzi</button>
+        <span id="weekLabel" class="week-label"></span>
+      </div>
+
+      <div class="right">
+        <a href="dashboard.html" class="btn-ghost">Înapoi la Dashboard</a>
+      </div>
+    </header>
+
+    <div class="calendar-layout">
+
+      <!-- MINI CALENDAR VERTICAL (3 LUNI) -->
+      <aside class="mini-calendar">
+        <div class="mini-header">
+          <button id="miniPrev" class="arrow-btn">▲</button>
+          <h3 id="miniMonthLabel">Ianuarie 2026</h3>
+          <button id="miniNext" class="arrow-btn">▼</button>
+        </div>
+
+        <div id="miniCalendarContainer" class="mini-months">
+          <!-- Luni generate din JS -->
+        </div>
+      </aside>
+
+      <!-- CALENDAR SĂPTĂMÂNAL -->
+      <section class="calendar-wrapper">
+        <div class="calendar-grid">
+
+          <!-- Coloana cu ore -->
+          <div class="time-column" id="timeColumn">
+            <!-- Ore generate din JS -->
+          </div>
+
+          <!-- Coloana cu zile -->
+          <div class="days-column">
+
+            <!-- Header cu zilele săptămânii -->
+            <div class="days-header" id="daysHeader">
+              <!-- Zile generate din JS -->
+            </div>
+
+            <!-- Grid cu ore × zile -->
+            <div class="days-body" id="daysBody">
+              <!-- Celule generate din JS -->
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- MODAL PENTRU EVENIMENT -->
+  <div class="modal-backdrop" id="eventModalBackdrop">
+    <div class="event-modal">
+
+      <h2 id="modalTitle">Adaugă eveniment</h2>
+
+      <div class="form-row">
+        <input id="eventTitle" placeholder="Titlu eveniment">
+      </div>
+
+      <div class="form-row">
+        <input type="date" id="eventDate">
+      </div>
+
+      <div class="form-row">
+        <input type="time" id="eventStart">
+        <input type="time" id="eventEnd">
+      </div>
+
+      <!-- SELECTOR DE CULOARE CU BULINE -->
+      <div class="form-row">
+        <div class="color-picker" id="colorPicker">
+          <div class="color-dot selected" data-color="#EF4444" style="background:#EF4444"></div>
+          <div class="color-dot" data-color="#22C55E" style="background:#22C55E"></div>
+          <div class="color-dot" data-color="#3B82F6" style="background:#3B82F6"></div>
+          <div class="color-dot" data-color="#A855F7" style="background:#A855F7"></div>
+          <div class="color-dot" data-color="#F97316" style="background:#F97316"></div>
+          <div class="color-dot" data-color="#EAB308" style="background:#EAB308"></div>
+          <div class="color-dot" data-color="#14B8A6" style="background:#14B8A6"></div>
+          <div class="color-dot" data-color="#EC4899" style="background:#EC4899"></div>
+          <div class="color-dot" data-color="#6B7280" style="background:#6B7280"></div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <textarea id="eventDesc" placeholder="Descriere"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveEvent">Salvează</button>
+        <button class="btn-ghost" id="deleteEvent">Șterge</button>
+        <button class="btn-ghost" id="closeModal">Anulează</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Logica calendarului -->
+  <script src="assets/js/calendar.js"></script>
+
+</body>
+</html>

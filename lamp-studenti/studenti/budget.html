@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Planner – Manager Personal</title>
+
+  <!-- Stiluri globale -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Stiluri specifice Budget Planner -->
+  <link rel="stylesheet" href="assets/css/budget.css">
+</head>
+
+<body>
+
+  <div class="budget-page">
+
+    <!-- HEADER -->
+    <header class="budget-header">
+      <div class="left">
+        <button id="prevMonth" class="btn-ghost">←</button>
+        <button id="nextMonth" class="btn-ghost">→</button>
+        <h1 id="monthLabel">Ianuarie 2026</h1>
+      </div>
+
+      <div class="right">
+        <a href="dashboard.html" class="btn-ghost">Înapoi la Dashboard</a>
+        <button id="addTransactionBtn" class="btn">Adaugă tranzacție</button>
+      </div>
+    </header>
+
+    <!-- STATISTICI -->
+    <section class="budget-stats">
+      <div class="stat-card income">
+        <h3>Venituri</h3>
+        <p id="totalIncome">0 RON</p>
+      </div>
+
+      <div class="stat-card expense">
+        <h3>Cheltuieli</h3>
+        <p id="totalExpense">0 RON</p>
+      </div>
+
+      <div class="stat-card balance">
+        <h3>Balanță</h3>
+        <p id="totalBalance">0 RON</p>
+      </div>
+    </section>
+
+    <!-- FILTRE -->
+    <div class="budget-filters">
+      <button class="filter-btn active" data-filter="all">Toate</button>
+      <button class="filter-btn" data-filter="income">Venituri</button>
+      <button class="filter-btn" data-filter="expense">Cheltuieli</button>
+    </div>
+
+    <!-- LISTA DE TRANZACȚII -->
+    <div id="transactionList" class="transaction-list">
+      <!-- Tranzacțiile sunt generate din JS -->
+    </div>
+
+  </div>
+
+  <!-- MODAL TRANZACȚIE -->
+  <div class="modal-backdrop" id="transactionModalBackdrop">
+    <div class="transaction-modal">
+
+      <h2 id="transactionModalTitle">Adaugă tranzacție</h2>
+
+      <div class="form-row">
+        <input id="transTitle" placeholder="Titlu">
+      </div>
+
+      <div class="form-row">
+        <input id="transAmount" type="number" placeholder="Sumă (RON)">
+      </div>
+
+      <!-- TOGGLE VENIT / CHELTUIALĂ -->
+      <div class="form-row type-toggle">
+        <button type="button" class="type-btn active" data-type="income">Venit</button>
+        <button type="button" class="type-btn" data-type="expense">Cheltuială</button>
+      </div>
+
+      <div class="form-row">
+        <input type="date" id="transDate">
+      </div>
+
+      <div class="form-row">
+        <select id="transCategory">
+          <option value="Salariu">Salariu</option>
+          <option value="Mâncare">Mâncare</option>
+          <option value="Transport">Transport</option>
+          <option value="Facturi">Facturi</option>
+          <option value="Cadouri">Cadouri</option>
+          <option value="Altele">Altele</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <textarea id="transDesc" placeholder="Descriere (opțional)"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveTransaction">Salvează</button>
+        <button class="btn-ghost" id="deleteTransaction">Șterge</button>
+        <button class="btn-ghost" id="closeTransactionModal">Anulează</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Logica Budget Planner -->
+  <script src="assets/js/budget.js"></script>
+
+</body>
+</html>

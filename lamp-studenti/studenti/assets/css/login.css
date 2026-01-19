@@ -1,0 +1,65 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+}
+
+.login-card {
+  background: var(--card);
+  padding: 35px;
+  width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.login-card h1 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+.form-row input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 15px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.small-text {
+  margin-top: 18px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.small-text a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.error-msg {
+  margin-top: 12px;
+  color: #ef4444;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

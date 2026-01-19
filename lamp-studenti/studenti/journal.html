@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal – Manager Personal</title>
+
+  <!-- Stiluri globale -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Stiluri specifice Journal -->
+  <link rel="stylesheet" href="assets/css/journal.css">
+</head>
+
+<body>
+
+  <div class="journal-page">
+
+    <!-- HEADER -->
+    <header class="journal-header">
+      <h1>Journal</h1>
+
+      <div class="right">
+        <a href="dashboard.html" class="btn-ghost">Înapoi la Dashboard</a>
+        <button id="addNoteBtn" class="btn">Adaugă notiță</button>
+      </div>
+    </header>
+
+    <!-- LISTA DE NOTIȚE -->
+    <div id="notesList" class="notes-list">
+      <!-- Notițele sunt generate din JS -->
+    </div>
+
+  </div>
+
+  <!-- MODAL NOTIȚĂ -->
+  <div class="modal-backdrop" id="noteModalBackdrop">
+    <div class="note-modal">
+
+      <h2 id="noteModalTitle">Adaugă notiță</h2>
+
+      <div class="form-row">
+        <input id="noteTitle" placeholder="Titlu notiță">
+      </div>
+
+      <div class="form-row">
+        <input type="date" id="noteDate">
+      </div>
+
+      <div class="form-row">
+        <textarea id="noteContent" placeholder="Scrie aici..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveNote">Salvează</button>
+        <button class="btn-ghost" id="deleteNote">Șterge</button>
+        <button class="btn-ghost" id="closeNoteModal">Anulează</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Logica Journal -->
+  <script src="assets/js/journal.js"></script>
+
+</body>
+</html>

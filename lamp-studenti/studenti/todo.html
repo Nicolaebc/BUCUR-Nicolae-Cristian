@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To‑Do List – Manager Personal</title>
+
+  <!-- Stiluri globale -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Stiluri specifice To‑Do List -->
+  <link rel="stylesheet" href="assets/css/todo.css">
+</head>
+
+<body>
+
+  <div class="todo-page">
+
+    <!-- HEADER -->
+    <header class="todo-header">
+      <div class="left">
+        <h1>To‑Do List</h1>
+      </div>
+
+      <div class="right">
+        <a href="dashboard.html" class="btn-ghost">Înapoi la Dashboard</a>
+        <button id="addTaskBtn" class="btn">Adaugă task</button>
+      </div>
+    </header>
+
+    <!-- FILTRE -->
+    <div class="todo-filters">
+      <button class="filter-btn active" data-filter="all">Toate</button>
+      <button class="filter-btn" data-filter="today">Astăzi</button>
+      <button class="filter-btn" data-filter="upcoming">Viitoare</button>
+      <button class="filter-btn" data-filter="done">Finalizate</button>
+    </div>
+
+    <!-- LISTA DE TASK-URI -->
+    <div id="todoList" class="todo-list">
+      <!-- Task-urile sunt generate din JS -->
+    </div>
+
+  </div>
+
+  <!-- MODAL TASK -->
+  <div class="modal-backdrop" id="taskModalBackdrop">
+    <div class="task-modal">
+
+      <h2 id="taskModalTitle">Adaugă task</h2>
+
+      <div class="form-row">
+        <input id="taskTitle" placeholder="Titlu task">
+      </div>
+
+      <div class="form-row">
+        <textarea id="taskDesc" placeholder="Descriere (opțional)"></textarea>
+      </div>
+
+      <div class="form-row">
+        <input type="date" id="taskDate">
+      </div>
+
+      <div class="form-row">
+        <div class="color-picker" id="taskColorPicker">
+          <div class="color-dot selected" data-color="#3B82F6" style="background:#3B82F6"></div>
+          <div class="color-dot" data-color="#22C55E" style="background:#22C55E"></div>
+          <div class="color-dot" data-color="#F97316" style="background:#F97316"></div>
+          <div class="color-dot" data-color="#EF4444" style="background:#EF4444"></div>
+          <div class="color-dot" data-color="#A855F7" style="background:#A855F7"></div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveTask">Salvează</button>
+        <button class="btn-ghost" id="deleteTask">Șterge</button>
+        <button class="btn-ghost" id="closeTaskModal">Anulează</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Logica To‑Do List -->
+  <script src="assets/js/todo.js"></script>
+
+</body>
+</html>

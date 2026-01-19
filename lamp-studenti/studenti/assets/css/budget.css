@@ -1,0 +1,316 @@
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+
+.budget-page {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.budget-header .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.budget-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   STATISTICS CARDS
+   ============================================================ */
+
+.budget-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  transition: 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.45);
+}
+
+.stat-card h3 {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Color accents */
+.stat-card.income p { color: #22C55E; }
+.stat-card.expense p { color: #EF4444; }
+.stat-card.balance p { color: var(--accent); }
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+
+.budget-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: var(--accent);
+  color: #04203a;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #04203a;
+  border-color: var(--accent);
+}
+
+/* ============================================================
+   TRANSACTION LIST
+   ============================================================ */
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* TRANSACTION CARD */
+
+.transaction-card {
+  background: var(--card);
+  padding: 16px 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.transaction-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+
+.trans-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.trans-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.trans-category {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.trans-date {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+.trans-amount {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.trans-amount.income { color: #22C55E; }
+.trans-amount.expense { color: #EF4444; }
+
+/* ============================================================
+   TYPE TOGGLE BUTTONS
+   ============================================================ */
+
+.type-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.type-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.type-btn.active {
+  background: var(--accent);
+  color: #04203a;
+  border-color: var(--accent);
+}
+
+.type-btn[data-type="income"].active {
+  background: #22C55E;
+  border-color: #22C55E;
+  color: #04203a;
+}
+
+.type-btn[data-type="expense"].active {
+  background: #EF4444;
+  border-color: #EF4444;
+  color: #04203a;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.transaction-modal {
+  background: var(--card);
+  padding: 25px;
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  animation: fadeIn 0.25s ease-out;
+}
+
+.transaction-modal h2 {
+  margin-bottom: 15px;
+}
+
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 14px;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .budget-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-modal {
+    width: 90%;
+  }
+}
+
+/* SELECT — versiunea premium simplă, coerentă cu proiectul */
+
+.form-row select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--card); /* FUNDALUL PROIECTULUI TĂU */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Hover */
+.form-row select:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Focus */
+.form-row select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
+}
+
+/* Stil pentru opțiuni */
+.form-row select option {
+  background: #0f172a; /* un dark solid pentru lista deschisă */
+  color: white;
+}

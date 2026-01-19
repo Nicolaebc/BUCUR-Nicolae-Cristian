@@ -1,0 +1,156 @@
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+
+.journal-page {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.journal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.journal-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   NOTES LIST
+   ============================================================ */
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* NOTE CARD */
+
+.note-card {
+  background: var(--card);
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  border-left: 4px solid var(--accent);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.note-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.45);
+}
+
+.note-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.note-date {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.note-preview {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.note-modal {
+  background: var(--card);
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  animation: fadeIn 0.25s ease-out;
+}
+
+.note-modal h2 {
+  margin-bottom: 15px;
+}
+
+/* FORM FIELDS */
+
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 14px;
+}
+
+textarea {
+  height: 180px;
+  resize: none;
+}
+
+/* ============================================================
+   MODAL ACTIONS
+   ============================================================ */
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .note-modal {
+    width: 90%;
+  }
+}
+
+.note-preview {
+  white-space: pre-wrap; /* păstrează rândurile */
+  line-height: 1.5;
+  opacity: 0.9;
+}

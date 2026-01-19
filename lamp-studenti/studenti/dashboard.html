@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – Manager Personal</title>
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+
+    <header class="dashboard-header">
+      <h1>Bun venit în Managerul tău Personal</h1>
+      <button id="logoutBtn" class="btn-ghost">Logout</button>
+      <span id="welcomeUser"></span>
+      <p class="subtitle">Alege o secțiune pentru a începe</p>
+    </header>
+
+    <section class="dashboard-grid">
+
+      <a href="calendar.html" class="dash-card">
+        <div class="icon">🗓️</div>
+        <h2>Calendar</h2>
+        <p>Planifică-ți ziua în format 24h</p>
+      </a>
+
+      <a href="todo.html" class="dash-card">
+        <div class="icon">📝</div>
+        <h2>To‑Do List</h2>
+        <p>Organizează-ți sarcinile eficient</p>
+      </a>
+
+      <a href="budget.html" class="dash-card">
+        <div class="icon">💰</div>
+        <h2>Budget Planner</h2>
+        <p>Gestionează-ți finanțele lunar</p>
+      </a>
+
+      <a href="journal.html" class="dash-card">
+        <div class="icon">📔</div>
+        <h2>Jurnal</h2>
+        <p>Notează-ți gândurile și progresul</p>
+      </a>
+
+    </section>
+
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
