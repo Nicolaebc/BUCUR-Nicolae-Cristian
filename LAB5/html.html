@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Formular de Contact</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h2>Formular de Contact</h2>
+    <form id="contactForm" method="post" action="process.php">
+        <label for="name">Nume:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span class="error" id="emailError"></span>
+
+        <label for="message">Mesaj:</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Trimite</button>
+    </form>
+
+    <p id="successMessage" class="success"></p>
+
+    <script src="js.js"></script>
+</body>
+</html>
